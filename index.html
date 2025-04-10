@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta property="og:image" content="header.png" />
+<meta property="twitter:card" content="summary_large_image">
+<a rel="me" href="https://botsin.space/@Momo" style="display: none;"></a>
+<a rel="me" href="https://botsin.space/@luigiasatank" style="display: none;"></a>
+<a rel="me" href="https://mas.to/@luigiasatank" style="display: none;"></a>
+<a rel="me" href="https://botsin.space/@CV03" style="display: none;"></a>
+<a rel="me" href="https://botsin.space/@HaSeul" style="display: none;"></a>
+<audio id="audio1" autoplay loop onloadeddata="setHalfVolume()"><source src="https://files.catbox.moe/2pj4j2.ogg"></audio>
+<script>
+      function setHalfVolume() {
+        var myAudio = document.getElementById("audio1");  
+        myAudio.volume = 0.5;
+      }
+    </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" href="style.css">
+    <title>03Sys</title>
+	        <div class="header">
+            <a href="#" class="nav-item" onclick="loadPage('home.htm')">Home</a>
+            <a href="#dni" class="nav-item" onclick="loadPage('dni.htm')">DNI</a>
+            <a href="#automated" class="nav-item" onclick="loadPage('automated.htm')">Automated accounts</a>
+            <a href="#contact" class="nav-item" onclick="loadPage('contact.htm')">Contact</a>
+        </div>
+    <script>
+        function loadPage(page) {
+            console.log(`${page}`);
+            fetch(page)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("SORRY NOTHING");
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('main-content').innerHTML = data;
+                    attachDropdownEvents();
+                })
+                .catch(error => {
+                    console.error('Fetch error:', error);
+                    document.getElementById('main-content').innerHTML = "<p>Page not found. Maybe I haven't created it yet, or the URL is invalid.</p>";
+                });
+        }
+
+        function attachDropdownEvents() {
+            const dropdowns = document.querySelectorAll('.dropdown-title');
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const arrow = this.querySelector('.arrow');
+
+                    if (content.style.display === 'none' || content.style.display === '') {
+                        content.style.display = 'block';
+                        arrow.innerHTML = '📂';
+                    } else {
+                        content.style.display = 'none';
+                        arrow.innerHTML = '📁';
+                    }
+                });
+            });
+        }
+
+        window.onload = function() {
+            loadPage('home.htm');
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div id="main-content" class="content">
+        </div>
+    </div>
+</body>
+
+<div class="footer">
+  <p>Not Copyright - 03Sys 2025</p>
+</div>
+</html>
