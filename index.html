@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta property="og:image" content="header.png" />
-<meta property="twitter:card" content="summary_large_image">
+<meta property="og:image" content="img/header.jpg" />
+<meta property="twitter:card" content="img/header.jpg">
+<meta name="description" content="Personal website for 03Sys.">
+<meta property="og:description" content="Personal website for 03Sys.">
+<meta name="twitter:description" content="Personal website for 03Sys.">
+<a rel="me" href="https://fosstodon.org/@3" style="display: none;"></a>
 <a rel="me" href="https://botsin.space/@Momo" style="display: none;"></a>
 <a rel="me" href="https://botsin.space/@luigiasatank" style="display: none;"></a>
 <a rel="me" href="https://mas.to/@luigiasatank" style="display: none;"></a>
 <a rel="me" href="https://botsin.space/@CV03" style="display: none;"></a>
 <a rel="me" href="https://botsin.space/@HaSeul" style="display: none;"></a>
 <audio id="audio1" autoplay loop onloadeddata="setHalfVolume()"><source src="https://files.catbox.moe/2pj4j2.ogg"></audio>
-<script>
-      function setHalfVolume() {
-        var myAudio = document.getElementById("audio1");  
-        myAudio.volume = 0.5;
-      }
-    </script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<link rel="stylesheet" href="style.css">
     <title>03Sys</title>
-	        <div class="header">
-            <a href="#" class="nav-item" onclick="loadPage('home.htm')">Home</a>
-            <a href="#dni" class="nav-item" onclick="loadPage('dni.htm')">DNI</a>
-            <a href="#interests" class="nav-item" onclick="loadPage('interests.htm')">Interests</a>
-            <a href="#automated" class="nav-item" onclick="loadPage('automated.htm')">Automated accounts</a>
-            <a href="#contact" class="nav-item" onclick="loadPage('contact.htm')">Contact</a>
-        </div>
+	<div class="header">
+    <a href="#" class="nav-item" onclick="loadPage('home.htm')">Home</a>
+    <a href="#dni" class="nav-item" onclick="loadPage('dni.htm')">DNI</a>
+    <a href="#interests" class="nav-item" onclick="loadPage('interests.htm')">Interests</a>
+    <a href="#automated" class="nav-item" onclick="loadPage('automated.htm')">Automated accounts</a>
+    <a href="#contact" class="nav-item" onclick="loadPage('contact.htm')">Contact</a>
+    </div>
     <script>
         function loadPage(page) {
+			document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
             console.log(`${page}`);
             fetch(page)
                 .then(response => {
@@ -68,6 +68,11 @@
         window.onload = function() {
             loadPage('home.htm');
         };
+        
+        function setHalfVolume() {
+        var myAudio = document.getElementById("audio1");  
+        myAudio.volume = 0.5;
+        }
     </script>
 </head>
 <body>
@@ -78,6 +83,6 @@
 </body>
 
 <div class="footer">
-  <p>2022-<script>document.write(Date().split` `[3])</script> 03Sys · All Rights Not Reserved Actually <p>
+  <p>2022-<script>document.write(Date().split` `[3])</script> 03Sys · All Rights Not Reserved Actually<p>
 </div>
 </html>
