@@ -19,19 +19,26 @@ SORRY NOTHING
     </script>
     <title>404 - 03Sys</title>
     <style>
-		@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
 		
         body {
             background-color: #000;
             overflow: hidden;
             margin: 0;
             padding: 0;
-            font-family: "Outfit", "Segoe UI", sans-serif;
-            animation: fadeIn 0.5s;
+            font-family: Red Hat Display, Segoe UI, sans-serif;
+            animation: glideup 0.6s;
         }
-        @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+@keyframes glideup {
+	0% {
+		transform: translateY(80px);
+		opacity:0;
+	}
+
+	100% {
+		transform: translateY(0px);
+		opacity:1;
+	}
 }
         a {
   color: white;
