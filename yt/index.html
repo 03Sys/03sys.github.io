@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>Random fave CV03 song · 03Sys</title>
+<link rel="icon" type="image/x-icon" href="../favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A page that gives you a random favorite Luka Megurine song uploaded on YouTube every visit.">
+<meta property="og:description" content="A page that gives you a random favorite Luka Megurine song uploaded on YouTube every visit.">
+
+<iframe class="frame" src="" style="position: fixed;top: 0px;right: 0px;width: 100%;height: 100%;border: none;"></iframe>
+
+<script>
+var videoID = [
+  "UP5aUdsOvy4",
+  "e0ddGWxyhUQ",
+  "nYBpCA9MrtE",
+  "8SOdD3jmxqM",
+  "nr7Sx7Q-N2k",
+  "RN7ZhWigSwc",
+  "fobQOAOAdoE",
+  "2xEQOoFT4_8",
+  "5CqFoytV6K4",
+  "kKDTWkaILvs",
+  "eDgRSxkxHz0",
+  "CKL1jmV9PLk",
+  "Wy1fwYLC6BY",
+  "r7xyMFM9Jb8",
+  "UFPexxx8zvI",
+  "u1XhZiPX3eI",
+  "ScSW9C3DF18",
+  "QVyVDoGB-eg",
+  "qjFym8Gt48k",
+  "syk1f6Dj82E",
+  "yIc8j0oMAW8",
+  "WdHRGH1Qv70",
+  "Diwq19nQpfk",
+  "pgqSXRJXdbs",
+  "9uoGIRGkXW8",
+  "LXpoeo01q-c",
+];
+
+var frame = document.getElementsByClassName("frame")[0];
+
+function randomURL(frame) {
+  var index = Math.floor(Math.random() * videoID.length);
+  var url = 'https://youtube.com/embed/' + videoID[index] + '?autoplay=1&;loop=1&;controls=1';
+  frame.src = url;
+}
+
+function codeAddress() {
+  randomURL(frame);
+}
+
+codeAddress();
+</script>
