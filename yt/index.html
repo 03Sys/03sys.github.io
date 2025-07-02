@@ -44,11 +44,15 @@ var videoID = [
   "mkkCadgzUfk",
 ];
 
+var playlist = [
+  "PLZa_K678ZZdtgmHosAaxrpXsy6NSldOUf",
+];
+
 var frame = document.getElementsByClassName("frame")[0];
 
 function randomURL(frame) {
   var index = Math.floor(Math.random() * videoID.length);
-  var url = 'https://youtube.com/embed/' + videoID[index] + '?playlist=' + videoID[index] + '&autoplay=1&;loop=1';
+  var url = 'https://youtube.com/embed/' + videoID[index] + '?list=' + playlist + '&autoplay=1&loop=1';
   frame.src = url;
 }
 
