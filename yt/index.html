@@ -7,7 +7,7 @@
 <meta property="og:description" content="A page that gives you a random favorite Luka Megurine song uploaded on YouTube every visit.">
 <meta name="twitter:description" content="A page that gives you a random favorite Luka Megurine song uploaded on YouTube every visit.">
 
-<iframe class="frame" src="" style="position: fixed;top: 0px;right: 0px;width: 100%;height: 100%;border: none;"></iframe>
+<iframe class="frame" src="" style="position: fixed;top: 0px;right: 0px;width: 100%;height: 100%;border: none;" ></iframe>
 
 <script>
 var videoID = [
@@ -48,7 +48,7 @@ var frame = document.getElementsByClassName("frame")[0];
 
 function randomURL(frame) {
   var index = Math.floor(Math.random() * videoID.length);
-  var url = 'https://youtube.com/embed/' + videoID[index] + '?autoplay=1&;loop=1&;controls=1';
+  var url = 'https://youtube.com/embed/' + videoID[index] + '?playlist=' + videoID[index] + '&autoplay=1&;loop=1';
   frame.src = url;
 }
 
