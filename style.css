@@ -184,10 +184,15 @@ marquee {
   }
   
   marquee {
-  width: 300px;
+    width: 300px;
+  }
+  
+  .logo {
+    margin-left: 0px;
+    margin-top: 60px;
   }
   
   h1 {
-  font-size: 9.5vw;
+    font-size: 9.5vw;
   }
 }
