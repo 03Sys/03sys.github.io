@@ -11,7 +11,6 @@
 <a rel="me" href="https://mas.to/@luigiasatank" style="display: none;"></a>
 <a rel="me" href="https://botsin.space/@CV03" style="display: none;"></a>
 <a rel="me" href="https://botsin.space/@HaSeul" style="display: none;"></a>
-<audio id="audio1" autoplay loop onloadeddata="setHalfVolume()"><source src="https://files.catbox.moe/hewox4.ogg"></audio>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,7 +41,7 @@
                     attachDropdownEvents();
                 })
                 .catch(error => {
-                    console.error('Fetch error:', error);
+                    console.error('Error:', error);
                     document.getElementById('main-content').innerHTML = "<p>Page not found. Maybe I haven't created it yet, or the URL is invalid.</p>";
                 });
         }
@@ -69,11 +68,6 @@
             loadPage('home.htm');
         };
         
-        function setHalfVolume() {
-        var myAudio = document.getElementById("audio1");  
-        myAudio.volume = 0.5;
-        };
-        
         $(function() {
         $('marquee').mouseover(function() {
         $(this).attr('scrollamount',0);
@@ -87,6 +81,7 @@
     <div class="container">
         <div id="main-content" class="content">
         </div>
+		<iframe src="/yt" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen=""></iframe>
     </div>
 </body>
 
