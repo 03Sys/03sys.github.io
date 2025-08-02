@@ -11,81 +11,18 @@
 <a rel="me" href="https://mas.to/@luigiasatank" style="display: none;"></a>
 <a rel="me" href="https://botsin.space/@CV03" style="display: none;"></a>
 <a rel="me" href="https://botsin.space/@HaSeul" style="display: none;"></a>
+<audio loop autoplay><source src="snd/bg.ogg" type="audio/ogg"></audio>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<link rel="stylesheet" href="style.css">
     <title>03Sys</title>
-	<div class="header">
-    <a href="#" class="nav-item" onclick="loadPage('home.htm')">Home</a>
-    <a href="#dni" class="nav-item" onclick="loadPage('dni.htm')">DNI</a>
-    <a href="#interests" class="nav-item" onclick="loadPage('interests.htm')">Interests</a>
-    <a href="#automated" class="nav-item" onclick="loadPage('automated.htm')">Automated accounts</a>
-    <a href="#contact" class="nav-item" onclick="loadPage('contact.htm')">Contact</a>
-    </div>
-    <script>
-        function loadPage(page) {
-			document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-            console.log(`${page}`);
-            fetch(page)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error("SORRY NOTHING");
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    document.getElementById('main-content').innerHTML = data;
-                    attachDropdownEvents();
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    document.getElementById('main-content').innerHTML = "<p>Page not found. Maybe I haven't created it yet, or the URL is invalid.</p>";
-                });
-        }
-
-        function attachDropdownEvents() {
-            const dropdowns = document.querySelectorAll('.dropdown-title');
-            dropdowns.forEach(dropdown => {
-                dropdown.addEventListener('click', function() {
-                    const content = this.nextElementSibling;
-                    const arrow = this.querySelector('.arrow');
-
-                    if (content.style.display === 'none' || content.style.display === '') {
-                        content.style.display = 'block';
-                        arrow.innerHTML = '📂';
-                    } else {
-                        content.style.display = 'none';
-                        arrow.innerHTML = '📁';
-                    }
-                });
-            });
-        }
-
-        window.onload = function() {
-            loadPage('home.htm');
-        };
-        
-        $(function() {
-        $('marquee').mouseover(function() {
-        $(this).attr('scrollamount',0);
-        }).mouseout(function() {
-        $(this).attr('scrollamount',5);
-        });
-});
-    </script>
-</head>
+    <div class="overlay"></div>
+	</head>
 <body>
-    <div class="container">
-        <div id="main-content" class="content">
-        </div>
-		<iframe src="/yt" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen=""></iframe>
-    </div>
-</body>
-
-<div class="footer">
-  <p>2022-<script>document.write(Date().split` `[3])</script> 03Sys · All Rights Not Reserved Actually<p>
-</div>
+<center>
+<img loading="lazy" class="logo" src="img/logo.png" width="384px" height="124px" alt="03Sys">
+<h1>Unfollow count: 4</h1>
+</center>
 </html>
